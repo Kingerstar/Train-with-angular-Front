@@ -1,4 +1,4 @@
-<div *ngIf="ennemyList.length > 0">
+<div *ngIf="ennemyList.length > 0" class="body-container">
     <div class="container" *ngFor="let ennemy of ennemyList">
         <div class="card-container" (click)="goToFight(ennemy)">
             <h3>{{ennemy.name}}</h3>

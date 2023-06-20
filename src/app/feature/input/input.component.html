@@ -20,8 +20,8 @@
     (click)="isDadAlive = false" [currentEnnemy]="currentEnnemy"></app-change-text-between-two>
 
 <app-change-text-between-two *ngIf="isKidAlive && isDadAlive == false"
-    title="Allez plus qu'un.. J'espère quand même que t'as honte de ce que tu leurs fait" sentence="Pauvre Famille"
-    (click)="isKidAlive = false" [currentEnnemy]="currentHelper"
+    title="Allez plus qu'un.. J'espère quand même que t'as honte de ce que tu leurs fait subir.."
+    sentence="Pauvre Famille" (click)="isKidAlive = false" [currentEnnemy]="currentHelper"
     deleteFamily="Je veux pas voir ça.."></app-change-text-between-two>
 
 <app-change-text-between-two *ngIf="isDadAlive == false && isKidAlive == false"

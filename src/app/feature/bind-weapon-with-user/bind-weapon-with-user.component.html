@@ -2,8 +2,10 @@
         *ngFor="let user of currentUser.weaponList"> {{user.name}} , </span> </p>
 <div class="weapon-body">
     <div class="weapon" *ngFor="let weapon of weaponList">
-        <button (click)="bindUserAndWeapon(weapon.id)"> {{weapon.name}}</button>
-        <img src="https://img.lovepik.com/free-png/20220120/lovepik-ancient-weapon-png-image_401532279_wh860.png">
+        <button (click)="bindUserAndWeapon(weapon.id)" [ngClass]="{selected : weapon.isBlunt}"
+            (click)="updateWeapon(weapon)">
+            {{weapon.name}}</button>
+        <img src="https://tr.rbxcdn.com/0c576a83b788e0c39c8b90886ffad874/420/420/Image/Png">
     </div>
 </div>
 <app-change-text-between-two title="Et bien.. " [redirect]="'arena/ngfor'"

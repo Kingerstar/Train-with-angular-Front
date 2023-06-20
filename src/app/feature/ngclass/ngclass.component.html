@@ -2,12 +2,17 @@
     <div class=" body" [ngClass]="{'slain' : isSlain}">
         <img [src]="currentEnnemy.imgUrl">
         <p class="name"> {{currentEnnemy.name}} </p>
-        <p class="description">Attention à celui là, il est triste que personne ne l'utilise jamais</p>
+        <p class="description" *ngIf="!isSlain">Attention à celui là, il est triste que personne ne l'utilise jamais
+        </p>
+        <p class="description" *ngIf="isSlain">Regarde comme il est content maintenant ! Tu as fait un heureux dans
+            ce
+            monde de fou
+        </p>
     </div>
 </div>
 
 
-<div class="card-body" *ngIf="!disappear">
+<div class=" card-body" *ngIf="!disappear">
     <div class="body">
         <p>Tu devrais peut-être cliquer sur lui pour le faire changer, il aime bien ça</p>
     </div>

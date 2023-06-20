@@ -1,3 +1,4 @@
+import { getLocaleMonthNames } from '@angular/common';
 import { Component } from '@angular/core';
 import { Ennemy } from 'src/app/models/ennemy.model';
 import { DbEnnemyService } from 'src/app/shared/db-ennemy.service';
@@ -13,7 +14,9 @@ export class ArenaComponent {
 
   constructor(private ennemyService: DbEnnemyService) {
   }
-
+  ngOnInit() {
+    this.getAllEnnemies();
+  }
 
   getAllEnnemies(): void {
     this.ennemyService.getAll().subscribe((e) => {

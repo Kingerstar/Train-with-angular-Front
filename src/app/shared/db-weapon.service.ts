@@ -19,4 +19,7 @@ export class DbWeaponService {
   add(weapon: Weapon): Observable<Weapon> {
     return this.http.post<Weapon>(`${this._BASE_URL}/add`, weapon);
   }
+  update(weapon: Weapon): Observable<Weapon> {
+    return this.http.put<Weapon>(`${this._BASE_URL}/update/${weapon.id}`, weapon);
+  }
 }

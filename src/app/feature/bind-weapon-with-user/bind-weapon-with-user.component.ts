@@ -41,4 +41,9 @@ export class BindWeaponWithUserComponent {
       window.location.reload();
     })
   }
+
+  updateWeapon(weapon: Weapon): void {
+    weapon.isBlunt = !weapon.isBlunt;
+    this.weaponService.update(weapon).subscribe();
+  }
 }
