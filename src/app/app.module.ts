@@ -23,6 +23,7 @@ import { InputSolveComponent } from './page/input-solve/input-solve.component';
 import { NgForComponent } from './feature/ng-for/ng-for.component';
 import { NgclassComponent } from './feature/ngclass/ngclass.component';
 import { VictoryComponent } from './feature/victory/victory.component';
+import { ErrorpageComponent } from './feature/errorpage/errorpage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { VictoryComponent } from './feature/victory/victory.component';
     NgForComponent,
     NgclassComponent,
     VictoryComponent,
+    ErrorpageComponent,
   ],
   imports: [
     BrowserModule,

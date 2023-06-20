@@ -14,6 +14,7 @@ import { InputSolveComponent } from './page/input-solve/input-solve.component';
 import { NgForComponent } from './feature/ng-for/ng-for.component';
 import { NgclassComponent } from './feature/ngclass/ngclass.component';
 import { VictoryComponent } from './feature/victory/victory.component';
+import { ErrorpageComponent } from './feature/errorpage/errorpage.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: "solve", component: InputSolveComponent },
   { path: "arena/ngfor", component: NgForComponent },
   { path: "arena/ngstyle", component: NgclassComponent },
-  { path: "victory", component: VictoryComponent }
+  { path: "victory", component: VictoryComponent },
+  { path: "**", component: ErrorpageComponent, pathMatch: "full" }
 
 
 ];

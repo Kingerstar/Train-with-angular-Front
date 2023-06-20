@@ -1,4 +1,5 @@
-<div class="card-body" *ngIf="teleport && !isSlain" (click)="deleteNgIf(currentEnnemy.id) ; isSlain = true">
+<div class="moveable" class="card-body" *ngIf="teleport && !isSlain"
+    (click)="deleteNgIf(currentEnnemy.id) ; isSlain = true">
     <div class="body">
         <button class="body">
             <img [src]="currentEnnemy.imgUrl">
