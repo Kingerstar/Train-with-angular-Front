@@ -1,0 +1,18 @@
+<div class="card-body" *ngIf="!isSlain">
+    <div class="body">
+        <img [src]="currentEnnemy.imgUrl">
+        <p class="name"> {{currentEnnemy.name}} </p>
+        <p class="description">Il est capable d'aller partout, attention au BehaviorSubject</p>
+    </div>
+</div>
+
+<div *ngIf="!isSlain"><app-change-text-between-two
+        title="Mince.. tu es dans de beaux draps.. Non en fait tu as juste à l'appeler lui même pour qu'il s'auto-anéantisse"
+        deleteFamily="Le service est à point, plus qu'à se débarasser de lui" [currentEnnemy]="currentEnnemy"
+        (click)="isSlain = true"></app-change-text-between-two>
+</div>
+
+<app-change-text-between-two
+    title="Bien joué mon grand, il reviendra pas de sitôt celui ci.. Enfin on sait jamais, il est partout de toute façon"
+    submitButtonLabel="Allez on repart au front !" redirect="/arena">
+</app-change-text-between-two>

@@ -1,0 +1,10 @@
+<p>Choisis judicieusement, tu peux toutes les prendre, tu possèdes déjà: <span
+        *ngFor="let user of currentUser.weaponList"> {{user.name}} , </span> </p>
+<div class="weapon-body">
+    <div class="weapon" *ngFor="let weapon of weaponList">
+        <button (click)="bindUserAndWeapon(weapon.id)"> {{weapon.name}}</button>
+        <img src="https://img.lovepik.com/free-png/20220120/lovepik-ancient-weapon-png-image_401532279_wh860.png">
+    </div>
+</div>
+<app-change-text-between-two title="Et bien.. " [redirect]="'arena/ngfor'"
+    submitButtonLabel="C'est bon ? Tu a finis ? Reviens et montre à NgFor qui est la vrai boucle"></app-change-text-between-two>

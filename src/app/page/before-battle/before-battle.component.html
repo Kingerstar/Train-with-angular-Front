@@ -1,0 +1,4 @@
+<div><img [src]="currentEnnemy.imgUrl" class="ennemy-img"></div>
+<app-change-text-between-two title="Tu a choisi de combattre le terrible : {{currentEnnemy.name}}"
+    (generateLinkClicked)="generateLink($event)" [currentEnnemy]="currentEnnemy"
+    fightWith=" Tu es prêt ?  Alors fonce"></app-change-text-between-two>

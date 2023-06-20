@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    margin: 1em;
+    width: 20%;
+}
+
+.card-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+
+
+    p {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+}
+
+.opponent-img {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.legs {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 100px;
+}
+
+.victory {
+    font-size: 200%;
+}

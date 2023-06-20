@@ -1,0 +1,37 @@
+.weapon-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.weapon {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.weapon button {
+    background-color: #060404;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    color: #333;
+    font-size: larger;
+    margin: 1em;
+}
+
+.weapon button.active {
+    background-color: red;
+    color: white;
+}

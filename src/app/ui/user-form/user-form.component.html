@@ -1,0 +1,42 @@
+<span class="logo"><img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgMtCYZdDMapmcOs5DE30jlGwmUMblyjuLEqkT9TKa3w&s">
+</span>
+<div class="form-container">
+    <form (ngSubmit)="onSubmit()" class="form">
+        <fieldset *ngIf="!firstFieldValidate">
+            <h3>Bienvenue à toi jeune individu en fin de formation</h3>
+            <label for="user-name">Qui es-tu..</label>
+            <input type="text" name="user-name" id="user-name" [(ngModel)]="user.name">
+            <button type="submit" (click)="firstFieldValidate = true">Valider</button>
+        </fieldset>
+
+        <fieldset *ngIf="firstFieldValidate && !userIsDefined">
+            <h3>Je vois... j'ai une autre question pour toi...</h3>
+            <label for="user-favoriteGame">Que préfères-tu faire en ce monde ?</label>
+            <input type="text" name="user-favoriteGame" id="user-FavoriteGame" [(ngModel)]="user.favoriteGame">
+            <button type="submit" (click)="userIsDefined = true">Valider</button>
+        </fieldset>
+
+        <fieldset *ngIf="userIsDefined && !lastFormIsFilled">
+            <h3>Très bien.. Maintenant il va te falloir une arme, choisis bien</h3>
+            <label for="user-weapon-name">Avec quoi puis-je me battre...</label>
+            <input type="text" name="user-weapon-name" id="user-weapon-name" [(ngModel)]="weapon.name">
+            <button type="submit" (click)="lastFormIsFilled = true">Valider</button>
+        </fieldset>
+
+        <fieldset *ngIf="lastFormIsFilled">
+            <h3>Et ton arme... Dirais-tu qu'elle est tranchante ? Ou contondante ?</h3>
+            <label>
+                <input type="radio" name="user-weapon" [checked]="weapon.isSharp"
+                    (change)="weapon.isSharp = true; weapon.isBlunt = false">
+                Tranchante
+            </label>
+            <label>
+                <input type="radio" name="user-weapon" [checked]="weapon.isBlunt"
+                    (change)="weapon.isSharp = false; weapon.isBlunt = true">
+                Contondante
+            </label>
+            <button type="submit">Valider</button>
+        </fieldset>
+    </form>
+</div>

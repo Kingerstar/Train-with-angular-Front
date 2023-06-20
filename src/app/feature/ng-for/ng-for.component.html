@@ -1,0 +1,77 @@
+<div *ngIf="!isSlain" class="flexwrap">
+    <div class="bodies">
+
+        <div class="card-body">
+            <div class="body">
+                <img [src]="currentEnnemy.imgUrl">
+                <p class="name"> {{currentEnnemy.name}} </p>
+                <p class="description">Ils se multiplient comme des petits pains</p>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="body">
+                <img [src]="currentEnnemy.imgUrl">
+                <p class="name"> {{currentEnnemy.name}} </p>
+                <p class="description">Ils se multiplient comme des petits pains</p>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="body">
+                <img [src]="currentEnnemy.imgUrl">
+                <p class="name"> {{currentEnnemy.name}} </p>
+                <p class="description">Ils se multiplient comme des petits pains</p>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="body">
+                <img [src]="currentEnnemy.imgUrl">
+                <p class="name"> {{currentEnnemy.name}} </p>
+                <p class="description">Ils se multiplient comme des petits pains</p>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="body">
+                <img [src]="currentEnnemy.imgUrl">
+                <p class="name"> {{currentEnnemy.name}} </p>
+                <p class="description">Ils se multiplient comme des petits pains</p>
+            </div>
+
+            <div class="card-body">
+                <div class="body">
+                    <img [src]="currentEnnemy.imgUrl">
+                    <p class="name"> {{currentEnnemy.name}} </p>
+                    <p class="description">Ils se multiplient comme des petits pains</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="body">
+                    <img [src]="currentEnnemy.imgUrl">
+                    <p class="name"> {{currentEnnemy.name}} </p>
+                    <p class="description">Ils se multiplient comme des petits pains</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<app-change-text-between-two *ngIf="currentUser.weaponList.length < 5" title="Ils sont beaucoup trop nombreux.. Va chercher des armes et sers toi du *ngFor contre eux !
+    Profites en pour lui voler son pouvoir de multiplication !" submitButtonLabel="Par ici"
+    [redirect]="'/solve'"></app-change-text-between-two>
+
+
+<div class="kill" *ngIf="!isSlain"><button *ngIf="currentUser.weaponList.length > 5"
+        (click)="deleteNgFor(currentEnnemy.id)">C'est bon,
+        tu as
+        amassé un nombre d'arme suffisant,<br>
+        clique ici</button>
+    <div>
+    </div>
+</div>
+<app-change-text-between-two title="Bien joué, tu leurs a montré qu'il y a toujours plus nombreux que soi"
+    submitButtonLabel="Au suivant !!" [redirect]="'/arena'">
+</app-change-text-between-two>

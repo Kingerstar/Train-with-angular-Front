@@ -1,0 +1,13 @@
+<div class="card-body" *ngIf="teleport && !isSlain" (click)="deleteNgIf(currentEnnemy.id) ; isSlain = true">
+    <div class="body">
+        <button class="body">
+            <img [src]="currentEnnemy.imgUrl">
+            <p class="name"> {{currentEnnemy.name}} le terrible</p>
+            <p class="description"> Il disparait aussi vite qu'il apparaît</p>
+        </button>
+    </div>
+</div>
+
+<app-change-text-between-two title="Clique lui dessus un bon coup ça devrait le calmer"
+    submitButtonLabel="Allez clique pour revenir dans l'arène, il en reste d'autre"
+    [redirect]="'/arena'"></app-change-text-between-two>

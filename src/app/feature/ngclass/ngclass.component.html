@@ -1,0 +1,18 @@
+<div class="card-body" *ngIf="!disappear" (click)="deleteNgStyle(currentEnnemy.id)">
+    <div class=" body" [ngClass]="{'slain' : isSlain}">
+        <img [src]="currentEnnemy.imgUrl">
+        <p class="name"> {{currentEnnemy.name}} </p>
+        <p class="description">Attention à celui là, il est triste que personne ne l'utilise jamais</p>
+    </div>
+</div>
+
+
+<div class="card-body" *ngIf="!disappear">
+    <div class="body">
+        <p>Tu devrais peut-être cliquer sur lui pour le faire changer, il aime bien ça</p>
+    </div>
+</div>
+
+<app-change-text-between-two *ngIf="disappear"
+    title="Bien joué, tu l'as calmé, il se sent enfin apprécié à sa juste valeur"
+    submitButtonLabel="Allez hop on y retourne" [redirect]="'/arena'"></app-change-text-between-two>

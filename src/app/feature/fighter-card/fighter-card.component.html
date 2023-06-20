@@ -1,0 +1,18 @@
+<div *ngIf="ennemyList.length > 0">
+    <div class="container" *ngFor="let ennemy of ennemyList">
+        <div class="card-container" (click)="goToFight(ennemy)">
+            <h3>{{ennemy.name}}</h3>
+            <p class="description">Il se bat avec : {{ennemy.weaponHolded.name}}</p>
+            <img class="opponent-img" [src]="ennemy.imgUrl">
+            <img src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/4ede86e8f440fb7.png"
+                class="legs">
+        </div>
+    </div>
+</div>
+
+<app-change-text-between-two class="victory" *ngIf="ennemyList.length === 0"
+    sentence="Qu'à tu pensé de cette petite aventure en ma compagnie ?"
+    title="Mes félicitations, tu as accompli ce que tu devais accomplir" [label]="true"
+    submitButtonLabel="Allez va sur ta page de victoire, tu l'as bien mérité" [redirect]="'/victory'">
+
+</app-change-text-between-two>

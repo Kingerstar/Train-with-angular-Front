@@ -1,0 +1,13 @@
+<div class="form-container">
+    <form class="form">
+        <fieldset>
+            <h3>{{ title }}</h3>
+            <label for="input"></label>
+            <p>{{sentence}}</p>
+            <input type="text" id="input" *ngIf="label">
+            <button type="submit" *ngIf="deleteFamily" (click)="delete(currentEnnemy.id)"> {{deleteFamily}}</button>
+            <button type="submit" *ngIf="submitButtonLabel" (click)="redirectButton()">{{ submitButtonLabel }}</button>
+            <button type="submit" *ngIf="fightWith" (click)="onGenerateLinkClick(currentEnnemy)"> {{fightWith}}</button>
+        </fieldset>
+    </form>
+</div>

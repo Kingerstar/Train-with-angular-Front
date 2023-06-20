@@ -1,0 +1,30 @@
+<div class="card-body">
+    <div class="body" *ngIf="isKidAlive">
+        <img [src]="currentEnnemy.imgUrl">
+        <p class="name"> {{currentEnnemy.name}} </p>
+        <p class="description" *ngIf="isDadAlive == true">Jamais sans son père, tu te retrouves en deux contre un mon
+            grand</p>
+        <p class="description" *ngIf="isDadAlive == false">Le pauvre petit pleure toutes les larmes de son corps</p>
+    </div>
+
+    <div class="body" *ngIf="isDadAlive">
+        <img [src]="currentHelper.imgUrl">
+        <p class="name"> {{currentHelper.name}} </p>
+        <p class="description">Jamais sans son fils, tu te retrouves en deux contre un mon grand</p>
+    </div>
+</div>
+
+<app-change-text-between-two *ngIf="isDadAlive === true"
+    title="Là tu as des problèmes.. Essaie de monter les monter l'un contre l'autre en utilsant l'input et l'output de ton côté"
+    deleteFamily="Bon je sais.. tu fais que ça.. Allez utilise un event-emitter sur ce button qu'on en parle plus"
+    (click)="isDadAlive = false" [currentEnnemy]="currentEnnemy"></app-change-text-between-two>
+
+<app-change-text-between-two *ngIf="isKidAlive && isDadAlive == false"
+    title="Allez plus qu'un.. J'espère quand même que t'as honte de ce que tu leurs fait" sentence="Pauvre Famille"
+    (click)="isKidAlive = false" [currentEnnemy]="currentHelper"
+    deleteFamily="Je veux pas voir ça.."></app-change-text-between-two>
+
+<app-change-text-between-two *ngIf="isDadAlive == false && isKidAlive == false"
+    title="Bon, il fallait quelqu'un pour faire le sal boulot de toute façon.."
+    submitButtonLabel="Allez, sort vite de là avant que j'en vienne aux larmes.."
+    [redirect]="'/arena'"></app-change-text-between-two>

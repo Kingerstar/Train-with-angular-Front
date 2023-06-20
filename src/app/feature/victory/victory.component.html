@@ -1,0 +1,11 @@
+<div class="victory-page">
+    <h1> Encore Félicitations {{currentUser.name}}!</h1>
+    <p>Vous allez pouvoir retourner {{currentUser.favoriteGame}}</p>
+    <p>Vous avez gagné le jeu.</p>
+    <button (click)="replay()">Rejouer</button>
+</div>
+
+<audio>
+    <source src="/src/assets/victory.mp3">
+    Votre navigateur ne supporte pas l'élément audio.
+</audio>

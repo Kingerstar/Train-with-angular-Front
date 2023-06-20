@@ -1,0 +1,23 @@
+<div class="body-container" *ngIf="!isSlain">
+    <div class="body">
+        <img class="img" [src]="currentEnnemy.imgUrl">
+        <p>{{currentEnnemy.name}}</p>
+        <p> il t'attaque à coup de {{currentEnnemy.weaponHolded.name}}</p>
+    </div>
+</div>
+
+
+<app-change-text-between-two *ngIf="!isSlain"
+    title="Non, Non, Non, lui te ne veux pas avoir à faire avec, sors de là en utilisant le router link, tu n'as pas le temps"
+    sentence="T'es pas d'accord ? Un peu surcôté linkedin, non ?"
+    submitButtonLabel="Allez clique pour revenir dans l'arène, il en reste d'autre"
+    [redirect]="'/arena'"></app-change-text-between-two>
+<div *ngIf="!isSlain" (click)="deleteLinkedin(currentEnnemy.id)">
+    <a target="_blank"
+        href="https://www.linkedin.com/in/th%C3%A9o-serres-1044b0272/details/featured/1635530299730/single-media-viewer/?profileId=ACoAAEKjC5QB39nHoiXFaJedShidwxyDhek9gfc">
+        Donne lui ça, ça le calmera
+    </a>
+</div>
+
+<app-change-text-between-two *ngIf="isSlain" title="Bon au moins t'as fait ton CV.. "
+    submitButtonLabel="Allez sort de là, il en reste d'autre" [redirect]="'/arena'"></app-change-text-between-two>
